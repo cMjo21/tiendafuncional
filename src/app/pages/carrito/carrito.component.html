@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+
+<div class="container">
+    <h2>Productos en el carrito</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let producto of products; let i = index">
+          <tr>
+            <td>{{ producto.title }}</td>
+            <td>{{ producto.price }}</td>
+            <td>
+              <input type="number" [value]="producto.cantidad" (change)="updateCantidad($event, i)">
+            </td>
+            <td>{{ producto.price * producto.cantidad }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <div>Total de la compra: {{ totalCompra.toFixed(2) }}</div>
+    <button (click)="reiniciarCompra()" class="btn btn-warning">Reiniciar Compra</button>
+    <button (click)="comprar()" class="btn btn-primary">Comprar</button>
+  </div>
+  

@@ -1,0 +1,12 @@
+.card-custom {
+    height: auto; /* Establece la altura automática para permitir diferentes alturas */
+    display: flex; /* Utiliza flexbox para alinear el contenido verticalmente */
+    flex-direction: column; /* Alinea el contenido verticalmente */
+    margin-bottom: 15px ;
+
+}
+  
+  .card-custom .card-body {
+    flex-grow: 1; /* Hace que el cuerpo de la tarjeta ocupe todo el espacio disponible */
+  }
+  
